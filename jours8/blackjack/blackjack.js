@@ -35,8 +35,17 @@ function displayPrompt() {
       }
 
 
-    }
-    if ((sJoueur > 21) || (sJoueur === sBanque)) {
+      if (sJoueur === sBanque) {
+
+        console.log('Tu as perdu')
+  
+        console.log("Your score is " + sJoueur + ", bank is " + sBanque)
+        return
+      }
+
+
+    } // Fin de la condition si je mets passed
+    if (sJoueur > 21) {
 
       console.log('Tu as perdu')
 
@@ -53,64 +62,10 @@ function displayPrompt() {
 
     displayPrompt()
 
-  });
+  });// fin de la condition si je met y ou yes
 }
 
 displayPrompt();
 
 // Jeux du black 
 
-
-/*
-var scorejoueur = 0;
-var scorebanque = Math.floor(Math.random() * (21 - 16) + 16)
-//var card = Math.floor(Math.random() * (11 - 1) + 1)
-//console.log(card)
-var prompt = require('prompt');
-prompt.start();
-function displayPrompt() {
-  prompt.get({ name: 'q', description: 'Card?' }, function (err, result) {
-    if ((result.q == 'Y' || result.q == 'YES') || (result.q == 'y' || result.q == 'yes')) {
-
-      var card = Math.floor(Math.random() * (11 - 1) + 1)
-      scorejoueur = scorejoueur + card
-      console.log("scorejoueur " + scorejoueur);
-      console.log("Your score is " + scorejoueur + ", bank is " + scorebanque)
-
-    }
-    else if (result.q === 'p' || result.q === 'pass') {
-      //console.log("gagne")
-      console.log("Your score is " + scorejoueur + ", bank is " + scorebanque)
-
-      if ((scorejoueur > scorebanque) && (scorejoueur < 21)) {
-
-        console.log("le joueur gagne.")
-        console.log("Your score is " + scorejoueur + ", bank is " + scorebanque)
-        return
-      }
-      if (scorejoueur < scorebanque) {
-        console.log("le joueur perd.")
-        console.log("Your score is " + scorejoueur + ", bank is " + scorebanque)
-        return
-      }
-
-
-      //return;
-    }
-    if (scorejoueur === 21) {
-      console.log("Black Jack et gagne")
-      return
-    }
-    if (scorejoueur > 21) {
-      console.log("tu es perdu")
-      console.log("Your score is " + scorejoueur + ", bank is " + scorebanque)
-      return
-    }  if (scorejoueur === scorebanque) {
-      console.log("le joueur perd.")
-      console.log("Your score is " + scorejoueur + ", bank is " + scorebanque)
-      return
-    }
-    displayPrompt();
-  });
-}
-displayPrompt();*/
